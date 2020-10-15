@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //Putting Sounds
+        
         let launchPath = Bundle.main.path(forResource: "torpedo.mp3", ofType:nil)!
         let launchurl = URL(fileURLWithPath: launchPath)
         do {
@@ -66,6 +68,7 @@ class ViewController: UIViewController {
         //dice stuff here
         print("ROLLING DICE!!!")
         
+        //Random number from 1 to 20
         let rolledNumber = Int.random(in: 1...20)
         
         let imageName = "d\(rolledNumber)"
@@ -74,6 +77,7 @@ class ViewController: UIViewController {
         
         rollDiceSound?.play()
         
+        //Match sound and text with dice number
         if(imageName == "d1"){
             criticalLabel.text = "TRY AGAIN!!!"
             failSound?.play()
